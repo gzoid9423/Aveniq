@@ -1,0 +1,200 @@
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Checkbox } from "@/components/ui/checkbox";
+import { toast } from "sonner";
+import { Send } from "lucide-react";
+
+const ContactForm = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    company: "",
+    email: "",
+    phone: "",
+    notes: "",
+    consent: false,
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (!formData.consent) {
+      toast.error("Please consent to being contacted");
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      // TODO: Replace with your n8n webhook URL
+      const webhookUrl = "YOUR_N8N_WEBHOOK_URL_HERE";
+      
+      // Simulated submission - replace with actual webhook call
+      await new Promise((resolve) => setTimeout(resolve, 1000));
+
+      toast.success("Demo request received!", {
+        description: "We'll contact you within 24 hours",
+      });
+
+      setFormData({
+        name: "",
+        company: "",
+        email: "",
+        phone: "",
+        notes: "",
+        consent: false,
+      });
+    } catch (error) {
+      toast.error("Something went wrong", {
+        description: "Please try again or email us directly",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  return (
+    <section id="contact" className="py-24 gradient-subtle">
+      <div className="container mx-auto px-4">
+        <div className="max-w-2xl mx-auto">
+          <div className="text-center mb-12 animate-fade-in">
+            <h2 className="text-3xl md:text-5xl font-bold mb-6">
+              Book Your Free Demo
+            </h2>
+            <p className="text-lg text-muted-foreground">
+              See how AI voice reception can transform your business
+            </p>
+          </div>
+
+          <form
+            onSubmit={handleSubmit}
+            className="bg-card rounded-2xl p-8 shadow-elegant animate-slide-up"
+          >
+            <div className="space-y-6">
+              <div className="grid md:grid-cols-2 gap-6">
+                <div>
+                  <label className="text-sm font-medium mb-2 block">
+                    Name *
+                  </label>
+                  <Input
+                    required
+                    value={formData.name}
+                    onChange={(e) =>
+                      setFormData({ ...formData, name: e.target.value })
+                    }
+                    placeholder="John Tan"
+                  />
+                </div>
+                <div>
+                  <label className="text-sm font-medium mb-2 block">
+                    Company *
+                  </label>
+                  <Input
+                    required
+                    value={formData.company}
+                    onChange={(e) =>
+                      setFormData({ ...formData, company: e.target.value })
+                    }
+                    placeholder="Your Business Name"
+                  />
+                </div>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-6">
+                <div>
+                  <label className="text-sm font-medium mb-2 block">
+                    Email *
+                  </label>
+                  <Input
+                    required
+                    type="email"
+                    value={formData.email}
+                    onChange={(e) =>
+                      setFormData({ ...formData, email: e.target.value })
+                    }
+                    placeholder="john@company.com"
+                  />
+                </div>
+                <div>
+                  <label className="text-sm font-medium mb-2 block">
+                    Phone *
+                  </label>
+                  <Input
+                    required
+                    type="tel"
+                    value={formData.phone}
+                    onChange={(e) =>
+                      setFormData({ ...formData, phone: e.target.value })
+                    }
+                    placeholder="+65 9123 4567"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label className="text-sm font-medium mb-2 block">
+                  Additional Notes
+                </label>
+                <Textarea
+                  value={formData.notes}
+                  onChange={(e) =>
+                    setFormData({ ...formData, notes: e.target.value })
+                  }
+                  placeholder="Tell us about your business and call volume..."
+                  rows={4}
+                />
+              </div>
+
+              <div className="flex items-start gap-3">
+                <Checkbox
+                  id="consent"
+                  checked={formData.consent}
+                  onCheckedChange={(checked) =>
+                    setFormData({ ...formData, consent: checked === true })
+                  }
+                />
+                <label
+                  htmlFor="consent"
+                  className="text-sm text-muted-foreground leading-relaxed cursor-pointer"
+                >
+                  I consent to being contacted for a demo and understand that my data will be handled according to Singapore's PDPA
+                </label>
+              </div>
+
+              <Button
+                type="submit"
+                variant="hero"
+                size="xl"
+                className="w-full"
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? (
+                  "Sending..."
+                ) : (
+                  <>
+                    Book My Demo
+                    <Send className="w-5 h-5" />
+                  </>
+                )}
+              </Button>
+
+              <p className="text-center text-sm text-muted-foreground">
+                Or email us at{" "}
+                <a
+                  href="mailto:hello@aivoicereception.sg"
+                  className="text-primary hover:underline"
+                >
+                  hello@aivoicereception.sg
+                </a>
+              </p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default ContactForm;
