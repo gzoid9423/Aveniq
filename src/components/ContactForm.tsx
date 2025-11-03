@@ -31,10 +31,12 @@ const ContactForm = () => {
       // TODO: Replace with your n8n webhook URL
       const webhookUrl = "https://gzoidx.app.n8n.cloud/webhook/lovable";
       
-      const res = await fetch(webhookUrl, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(formData),
+      const res = await fetch("/api/contact", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify(formData),
+});
+
   });
 
   if (!res.ok) throw new Error("Webhook failed");
