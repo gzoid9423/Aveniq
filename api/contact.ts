@@ -15,6 +15,9 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       body: JSON.stringify(req.body),
     });
 
+    const text = await response.text();
+    console.log("Webhook response:", text);
+
     if (!response.ok) throw new Error("Webhook request failed");
 
     return res.status(200).json({ message: "Success" });
