@@ -120,10 +120,23 @@ All colors MUST be HSL.
   }
 
   .gradient-text {
-    background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary-glow)) 50%, hsl(var(--accent)) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    @apply bg-gradient-to-r from-primary via-accent to-primary-glow bg-clip-text text-transparent;
+    background-size: 200% auto;
+    animation: shimmer 3s linear infinite;
+  }
+  
+  .glass-card {
+    @apply bg-card/30 backdrop-blur-2xl border border-primary/20 rounded-3xl;
+    box-shadow: 
+      0 8px 32px 0 rgba(31, 38, 135, 0.37),
+      inset 0 1px 0 0 rgba(255, 255, 255, 0.05);
+  }
+  
+  .premium-glow {
+    box-shadow: 
+      0 0 30px hsl(195 100% 50% / 0.3),
+      0 0 60px hsl(45 95% 55% / 0.2),
+      inset 0 0 20px hsl(195 100% 50% / 0.1);
   }
 
   .shadow-glow {

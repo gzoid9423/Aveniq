@@ -29,10 +29,13 @@ const Navigation = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           <div className="flex items-center gap-3 group cursor-pointer">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary/20 to-primary-glow/20 flex items-center justify-center shadow-soft group-hover:scale-110 transition-smooth">
-              <Phone className="w-5 h-5 text-primary" />
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center shadow-soft group-hover:scale-110 transition-smooth group-hover:shadow-glow">
+              <Phone className="w-5 h-5 text-primary group-hover:text-accent transition-smooth" />
             </div>
-            <span className="text-xl font-bold text-foreground">AI Voice Reception</span>
+            <span className="text-xl font-bold tracking-tight">
+              <span className="gradient-text">VOX</span>
+              <span className="text-accent">EN</span>
+            </span>
           </div>
 
           <div className="hidden md:flex items-center gap-8">

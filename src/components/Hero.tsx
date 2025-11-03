@@ -36,17 +36,18 @@ const Hero = () => {
       <div className="container mx-auto px-4 py-32 text-center relative z-10">
         <div className="max-w-5xl mx-auto">
           <div className="animate-fade-in">
-            <h1 className="text-6xl md:text-8xl font-bold mb-8 leading-tight">
+            <h1 className="text-6xl md:text-8xl font-bold mb-8 leading-tight tracking-tight">
               Never Miss a Call
               <br />
-              <span className="gradient-text animate-shimmer bg-[length:200%_auto]" style={{ backgroundImage: "linear-gradient(90deg, hsl(var(--primary)) 0%, hsl(var(--primary-glow)) 25%, hsl(var(--accent)) 50%, hsl(var(--primary-glow)) 75%, hsl(var(--primary)) 100%)" }}>
+              <span className="gradient-text animate-shimmer bg-clip-text text-transparent bg-gradient-to-r from-primary via-accent to-primary bg-[length:200%_auto]">
                 Ever Again
               </span>
             </h1>
           </div>
           
-          <p className="text-xl md:text-3xl text-foreground/80 mb-12 max-w-3xl mx-auto animate-fade-in font-light" style={{ animationDelay: "0.2s" }}>
-            Human-quality AI voice reception for Singapore's premium businesses
+          <p className="text-xl md:text-3xl text-foreground/60 mb-12 max-w-3xl mx-auto animate-fade-in font-light leading-relaxed" style={{ animationDelay: "0.2s" }}>
+            Human-quality AI voice reception for Singapore's premium businesses.{" "}
+            <span className="text-accent/90 font-normal">Powered by Voxen.</span>
           </p>
 
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center animate-slide-up mb-20" style={{ animationDelay: "0.3s" }}>
@@ -72,22 +73,31 @@ const Hero = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="group p-8 rounded-2xl bg-card/40 backdrop-blur-xl border border-primary/20 hover:border-primary/40 shadow-elegant hover:shadow-glow transition-smooth animate-scale-in hover:scale-105" style={{ animationDelay: "0.4s" }}>
-              <div className="text-5xl font-bold gradient-text mb-3">24/7</div>
-              <div className="text-base font-semibold mb-2 text-foreground">Always Available</div>
-              <div className="text-sm text-muted-foreground">Never miss an opportunity, day or night</div>
+            <div className="group relative p-8 rounded-3xl bg-card/30 backdrop-blur-2xl border border-primary/20 hover:border-accent/40 shadow-elegant hover:shadow-glow transition-smooth animate-scale-in hover:scale-105 overflow-hidden" style={{ animationDelay: "0.4s" }}>
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5 opacity-0 group-hover:opacity-100 transition-smooth" />
+              <div className="relative z-10">
+                <div className="text-5xl font-bold gradient-text mb-3">24/7</div>
+                <div className="text-base font-semibold mb-2 text-foreground group-hover:text-accent transition-smooth">Always Available</div>
+                <div className="text-sm text-foreground/60 font-light">Never miss an opportunity, day or night</div>
+              </div>
             </div>
             
-            <div className="group p-8 rounded-2xl bg-card/40 backdrop-blur-xl border border-primary/20 hover:border-primary/40 shadow-elegant hover:shadow-glow transition-smooth animate-scale-in hover:scale-105" style={{ animationDelay: "0.5s" }}>
-              <div className="text-5xl font-bold gradient-text mb-3">&lt;2s</div>
-              <div className="text-base font-semibold mb-2 text-foreground">Response Time</div>
-              <div className="text-sm text-muted-foreground">Instant, natural conversation flow</div>
+            <div className="group relative p-8 rounded-3xl bg-card/30 backdrop-blur-2xl border border-primary/20 hover:border-accent/40 shadow-elegant hover:shadow-glow transition-smooth animate-scale-in hover:scale-105 overflow-hidden" style={{ animationDelay: "0.5s" }}>
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5 opacity-0 group-hover:opacity-100 transition-smooth" />
+              <div className="relative z-10">
+                <div className="text-5xl font-bold gradient-text mb-3">&lt;2s</div>
+                <div className="text-base font-semibold mb-2 text-foreground group-hover:text-accent transition-smooth">Response Time</div>
+                <div className="text-sm text-foreground/60 font-light">Instant, natural conversation flow</div>
+              </div>
             </div>
             
-            <div className="group p-8 rounded-2xl bg-card/40 backdrop-blur-xl border border-primary/20 hover:border-primary/40 shadow-elegant hover:shadow-glow transition-smooth animate-scale-in hover:scale-105" style={{ animationDelay: "0.6s" }}>
-              <div className="text-5xl font-bold gradient-text mb-3">100%</div>
-              <div className="text-base font-semibold mb-2 text-foreground">PDPA Compliant</div>
-              <div className="text-sm text-muted-foreground">Secure and fully regulated</div>
+            <div className="group relative p-8 rounded-3xl bg-card/30 backdrop-blur-2xl border border-primary/20 hover:border-accent/40 shadow-elegant hover:shadow-glow transition-smooth animate-scale-in hover:scale-105 overflow-hidden" style={{ animationDelay: "0.6s" }}>
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5 opacity-0 group-hover:opacity-100 transition-smooth" />
+              <div className="relative z-10">
+                <div className="text-5xl font-bold gradient-text mb-3">100%</div>
+                <div className="text-base font-semibold mb-2 text-foreground group-hover:text-accent transition-smooth">PDPA Compliant</div>
+                <div className="text-sm text-foreground/60 font-light">Secure and fully regulated</div>
+              </div>
             </div>
           </div>
         </div>

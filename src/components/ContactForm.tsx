@@ -60,19 +60,20 @@ const ContactForm = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-2xl mx-auto">
           <div className="text-center mb-12 animate-fade-in">
-            <h2 className="text-3xl md:text-5xl font-bold mb-6">
-              Book Your Free Demo
+            <h2 className="text-3xl md:text-5xl font-bold mb-6 tracking-tight">
+              Book Your <span className="gradient-text">Free Demo</span>
             </h2>
-            <p className="text-lg text-muted-foreground">
-              See how AI voice reception can transform your business
+            <p className="text-lg text-foreground/60 font-light max-w-2xl mx-auto">
+              See how Voxen's AI voice reception can transform your business
             </p>
           </div>
 
           <form
             onSubmit={handleSubmit}
-            className="bg-card rounded-2xl p-8 shadow-elegant animate-slide-up"
+            className="glass-card p-10 shadow-glow animate-slide-up relative overflow-hidden group"
           >
-            <div className="space-y-6">
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5 opacity-0 group-hover:opacity-100 transition-smooth" />
+            <div className="space-y-6 relative z-10">
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <label className="text-sm font-medium mb-2 block">
@@ -180,13 +181,13 @@ const ContactForm = () => {
                 )}
               </Button>
 
-              <p className="text-center text-sm text-muted-foreground">
+              <p className="text-center text-sm text-foreground/60 font-light">
                 Or email us at{" "}
                 <a
-                  href="mailto:hello@aivoicereception.sg"
-                  className="text-primary hover:underline"
+                  href="mailto:hello@voxen.sg"
+                  className="text-accent hover:text-primary transition-smooth font-normal"
                 >
-                  hello@aivoicereception.sg
+                  hello@voxen.sg
                 </a>
               </p>
             </div>

@@ -13,12 +13,19 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-4 gap-8 mb-12">
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              <Phone className="w-5 h-5" />
-              <span className="font-bold text-lg">AI Voice Reception</span>
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary via-accent to-primary-glow flex items-center justify-center shadow-glow">
+                <Phone className="w-7 h-7 text-white" />
+              </div>
+              <div>
+                <h3 className="font-bold text-2xl tracking-tight">
+                  <span className="gradient-text">VOX</span>
+                  <span className="text-accent">EN</span>
+                </h3>
+              </div>
             </div>
-            <p className="text-sm opacity-80 mb-4">
-              AI Voice Reception built in Singapore for Singapore businesses
+            <p className="text-sm opacity-70 mb-4 font-light max-w-xs">
+              AI Voice Reception • Built in Singapore for Singapore businesses
             </p>
           </div>
 
@@ -87,10 +94,10 @@ const Footer = () => {
               <li className="flex items-center gap-2 opacity-80">
                 <Mail className="w-4 h-4" />
                 <a
-                  href="mailto:hello@aivoicereception.sg"
+                  href="mailto:hello@voxen.sg"
                   className="hover:opacity-100 transition-smooth"
                 >
-                  hello@aivoicereception.sg
+                  hello@voxen.sg
                 </a>
               </li>
               <li className="flex items-center gap-2 opacity-80">
@@ -110,7 +117,7 @@ const Footer = () => {
         </div>
 
         <div className="pt-8 border-t border-background/20 text-center text-sm opacity-60">
-          <p>© {new Date().getFullYear()} AI Voice Reception. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Voxen. All rights reserved.</p>
         </div>
       </div>
     </footer>
