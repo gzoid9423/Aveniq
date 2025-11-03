@@ -29,7 +29,7 @@ const ContactForm = () => {
 
     try {
       // TODO: Replace with your n8n webhook URL
-      const webhookUrl = "YOUR_N8N_WEBHOOK_URL_HERE";
+      const webhookUrl = https://gzoidx.app.n8n.cloud/webhook-test/lovable-form;
       
       // Simulated submission - replace with actual webhook call
       await new Promise((resolve) => setTimeout(resolve, 1000));
