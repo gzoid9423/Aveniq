@@ -1,28 +1,24 @@
-// api/contact.ts
-import type { VercelRequest, VercelResponse } from "@vercel/node";
-
-export default async function handler(req: VercelRequest, res: VercelResponse) {
+export default async function handler(req, res) {
   if (req.method !== "POST") {
-    return res.status(405).json({ message: "Method not allowed" });
+    return res.status(405).json({ error: "Method not allowed" });
   }
 
   try {
-    const webhookUrl = "https://gzoidx.app.n8n.cloud/webhook/lovable";
-
-    const response = await fetch(webhookUrl, {
+    const response = await fetch("https://gzoidx.app.n8n.cloud/webhook/lovable", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(req.body),
     });
 
-    const text = await response.text();
-    console.log("Webhook response:", text);
+    if (!response.ok) {
+      const text = await response.text();
+      throw new Error(`Webhook failed: ${response.status} - ${text}`);
+    }
 
-    if (!response.ok) throw new Error("Webhook request failed");
-
-    return res.status(200).json({ message: "Success" });
-  } catch (err) {
-    console.error("Webhook error:", err);
-    return res.status(500).json({ message: "Webhook error" });
+    res.status(200).json({ message: "Webhook successful" });
+  } catch (error) {
+    console.error("Webhook error:", error);
+    res.status(500).json({ error: error.message });
   }
 }
+
