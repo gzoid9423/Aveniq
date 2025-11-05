@@ -6,8 +6,8 @@ const Footer = () => {
           <h3 className="text-4xl md:text-5xl font-bold gradient-text">AVENIQ</h3>
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center text-secondary">
-            <a href="mailto:hello@aveniq.sg" className="hover:text-primary transition-smooth text-lg">
-              hello@aveniq.sg
+            <a href="mailto:gautham.dep@gmail.com" className="hover:text-primary transition-smooth text-lg">
+              gautham.dep@gmail.com
             </a>
             <span className="hidden sm:block">•</span>
             <a href="tel:+6591924144" className="hover:text-primary transition-smooth text-lg">
