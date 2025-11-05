@@ -68,7 +68,7 @@ const DemoSection = () => {
                   onClick={() => window.location.href = "tel:+6512345678"}
                   className="hover:text-primary"
                 >
-                  Or Call +65 1234 5678
+                  Or Call +65 91924144
                 </Button>
               </div>
             </div>
